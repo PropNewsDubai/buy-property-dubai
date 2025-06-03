@@ -13,8 +13,11 @@ function PropertyGrid() {
   const [featuredFilter, setFeaturedFilter] = useState('All Properties');
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
+  // Ensure a valid language
+  const currentLanguage = i18n.language || 'en';
+
   const filteredProperties = properties.filter((property) => {
-    const title = property[`title_${i18n.language}`] || property.title;
+    const title = property[`title_${currentLanguage}`] || property.title;
     const matchesSearch = title
       .toLowerCase()
       .includes(searchQuery.toLowerCase());
@@ -154,11 +157,15 @@ function PropertyGrid() {
       ) : (
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {filteredProperties.map((property) => {
-            const title = property[`title_${i18n.language}`] || property.title;
+            const title = property[`title_${currentLanguage}`] || property.title;
             const price = Number(property.price).toLocaleString('en-US');
-            const whatsappMessage = i18n.getResource(i18n.language, 'translation', 'whatsapp_message')
-              .replace('{title}', title)
-              .replace('{price}', price);
+            const whatsappMessage = (() => {
+              const messageTemplate = i18n.getResource(currentLanguage, 'translation', 'whatsapp_message') ||
+                "I'm interested in {title} priced at AED {price}";
+              // Optional: Log for debugging
+              console.log('Language:', currentLanguage, 'Message Template:', messageTemplate);
+              return messageTemplate.replace('{title}', title).replace('{price}', price);
+            })();
             const translatedAmenities = property.amenities.map((amenity) => t(amenity)).join(', ');
 
             return (
@@ -195,7 +202,7 @@ function PropertyGrid() {
                     {t('parking_spaces').split('{count}')[0]}{property.parking}
                   </p>
                   <p className="mt-2 text-sm">
-                    {property[`title_${i18n.language}`] || property.title}
+                    {property[`title_${currentLanguage}`] || property.title}
                   </p>
                   <p className="text-sm">
                     {t('amenities').split('{value}')[0]}{translatedAmenities}
@@ -221,7 +228,7 @@ function PropertyGrid() {
                     {JSON.stringify({
                       '@context': 'https://schema.org',
                       '@type': 'Residence',
-                      name: property[`title_${i18n.language}`] || property.title,
+                      name: property[`title_${currentLanguage}`] || property.title,
                       address: {
                         '@type': 'PostalAddress',
                         addressLocality: property.location,
@@ -298,7 +305,7 @@ function PropertyGrid() {
                   {t('parking_spaces').split('{count}')[0]}{selectedProperty.parking}
                 </p>
                 <p className="mt-2 text-sm">
-                  {selectedProperty[`title_${i18n.language}`] || selectedProperty.title}
+                  {selectedProperty[`title_${currentLanguage}`] || selectedProperty.title}
                 </p>
                 <p className="text-sm">
                   {t('amenities').split('{value}')[0]}
@@ -313,9 +320,15 @@ function PropertyGrid() {
                   </a>
                   <a
                     href={`https://wa.me/+971123456789?text=${encodeURIComponent(
-                      i18n.getResource(i18n.language, 'translation', 'whatsapp_message')
-                        .replace('{title}', selectedProperty[`title_${i18n.language}`] || selectedProperty.title)
-                        .replace('{price}', Number(selectedProperty.price).toLocaleString('en-US'))
+                      (() => {
+                        const messageTemplate = i18n.getResource(currentLanguage, 'translation', 'whatsapp_message') ||
+                          "I'm interested in {title} priced at AED {price}";
+                        // Optional: Log for debugging
+                        console.log('Modal Language:', currentLanguage, 'Message Template:', messageTemplate);
+                        return messageTemplate
+                          .replace('{title}', selectedProperty[`title_${currentLanguage}`] || selectedProperty.title)
+                          .replace('{price}', Number(selectedProperty.price).toLocaleString('en-US'));
+                      })()
                     )}`}
                     target="_blank"
                     rel="noopener noreferrer"
