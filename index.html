@@ -36,5 +36,11 @@
 <body>
   <div id="root"></div>
   <script type="module" src="./src/main.jsx"></script>
+  <script>
+  const path = window.location.pathname;
+  if (path !== '/buy-property-dubai/' && !path.startsWith('/buy-property-dubai/assets/')) {
+    window.location.replace('/buy-property-dubai/');
+  }
+  </script>
 </body>
 </html>
