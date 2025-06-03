@@ -1,0 +1,269 @@
+@import "tailwindcss";
+
+:root {
+  --gold: #d4af37;
+  --paper-bg: #f5f5f5;
+}
+
+body {
+  font-family: 'Georgia', serif;
+  background-color: var(--paper-bg);
+  background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+}
+
+/* Language-specific fonts */
+html[lang="ar"] body,
+html[lang="fa"] body {
+  font-family: 'Noto Kufi Arabic', 'Georgia', serif;
+}
+
+html[lang="zh"] body {
+  font-family: 'Noto Sans SC', 'Georgia', serif;
+}
+
+html[lang="ar"],
+html[lang="fa"] {
+  direction: rtl;
+}
+
+h1, h2, h3 {
+  font-family: 'Times New Roman', Times, serif;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+html[lang="ar"] h1,
+html[lang="ar"] h2,
+html[lang="ar"] h3,
+html[lang="fa"] h1,
+html[lang="fa"] h2,
+html[lang="fa"] h3 {
+  font-family: 'Noto Kufi Arabic', 'Times New Roman', Times, serif;
+}
+
+html[lang="zh"] h1,
+html[lang="zh"] h2,
+html[lang="zh"] h3 {
+  font-family: 'Noto Sans SC', 'Times New Roman', Times, serif;
+}
+
+h1::after, h2::after, h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 3rem;
+  height: 2px;
+  background-color: var(--gold);
+}
+
+html[lang="ar"] h1::after,
+html[lang="ar"] h2::after,
+html[lang="ar"] h3::after,
+html[lang="fa"] h1::after,
+html[lang="fa"] h2::after,
+html[lang="fa"] h3::after {
+  left: auto;
+  right: 0;
+}
+
+aside {
+  padding: 1.5rem;
+  border-right: 1px solid #e5e5e5;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+html[lang="ar"] aside,
+html[lang="fa"] aside {
+  border-right: none;
+  border-left: 1px solid #e5e5e5;
+}
+
+aside h2 {
+  font-size: 1.25rem;
+  color: var(--gold);
+  margin-bottom: 1.5rem;
+}
+
+aside h3 {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 0.75rem;
+}
+
+aside div a {
+  display: block;
+  text-align: center;
+  font-size: 0.875rem;
+  padding: 0.75rem;
+  background-color: var(--gold);
+  color: #fff;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+html[lang="ar"] aside div a,
+html[lang="fa"] aside div a {
+  text-align: center;
+}
+
+aside div a:hover {
+  background-color: #b8972f;
+}
+
+aside div.flex {
+  margin-bottom: 2rem;
+}
+
+aside iframe {
+  border: 1px solid #e5e5e5;
+}
+
+main {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+main h1 {
+  color: #333;
+}
+
+main div.border {
+  border: 1px solid #e5e5e5;
+  border-radius: 0;
+  transition: transform 0.3s;
+}
+
+main div.border:hover {
+  transform: translateY(-2px);
+}
+
+main img {
+  min-height: 12rem;
+}
+
+main div a {
+  font-size: 0.875rem;
+  padding: 0.5rem;
+  background-color: var(--gold);
+  color: #fff;
+}
+
+main div a:hover {
+  background-color: #b8972f;
+}
+
+/* RTL adjustments for main content */
+html[lang="ar"] main,
+html[lang="fa"] main {
+  text-align: right;
+}
+
+html[lang="ar"] main .flex,
+html[lang="fa"] main .flex {
+  flex-direction: row-reverse;
+}
+
+html[lang="ar"] main .grid,
+html[lang="fa"] main .grid {
+  direction: rtl;
+}
+
+html[lang="ar"] main div.border .flex,
+html[lang="fa"] main div.border .flex {
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+
+html[lang="ar"] main .fixed .bg-white button,
+html[lang="fa"] main .fixed .bg-white button {
+  right: auto;
+  left: 4;
+}
+
+.fixed.inset-0 {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.fixed .bg-white {
+  border: 1px solid var(--gold);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  animation: slideUp 0.3s ease-in-out;
+}
+
+.fixed .bg-white h2 {
+  color: #333;
+}
+
+.fixed .bg-white img {
+  transition: opacity 0.3s;
+}
+
+.fixed .bg-white img:hover {
+  opacity: 0.9;
+}
+
+.fixed .bg-white button {
+  font-size: 1.5rem;
+  transition: color 0.3s;
+}
+
+.fixed .bg-white button:hover {
+  color: var(--gold);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media (min-width: 640px) {
+  aside {
+    padding: 2rem;
+    border-right: 2px solid #e5e5e5;
+    position: fixed; /* Make sidebar fixed on desktop */
+    top: 0;
+    left: 0;
+    height: 100vh; /* Full viewport height */
+    width: 16rem; /* Match w-64 (64 * 0.25rem = 16rem) */
+    overflow-y: auto; /* Allow scrolling within the sidebar if content overflows */
+  }
+  html[lang="ar"] aside,
+  html[lang="fa"] aside {
+    border-right: none;
+    border-left: 2px solid #e5e5e5;
+    left: auto;
+    right: 0;
+  }
+  aside h2 {
+    font-size: 1.5rem;
+  }
+  aside h3 {
+    font-size: 1.125rem;
+  }
+  aside div a {
+    font-size: 1rem;
+    padding: 1rem;
+  }
+  aside div.flex {
+    margin-bottom: 2.5rem;
+  }
+}
+
+/* npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css */
