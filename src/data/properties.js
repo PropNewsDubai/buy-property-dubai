@@ -9,7 +9,7 @@ const properties = [
     title_zh: '迪拜码头别墅',
     images: [
       // 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&auto=format&fit=crop&q=60',
-      './src/assets/images/Capture.PNG',
+      './assets/images/Capture.PNG',
       'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&auto=format&fit=crop&q=60&angle=90',
       'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&auto=format&fit=crop&q=60&angle=180',
     ],
