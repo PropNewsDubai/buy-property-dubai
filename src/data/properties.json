@@ -1,0 +1,98 @@
+[
+  {
+    "id": 1,
+    "title": "Vincitore Wellness Estate",
+    "title_ar": "فينشيتور ويلنس إستيت",
+    "title_fa": "وینچیتوره ولنس استیت",
+    "title_tr": "Vincitore Wellness Estate",
+    "title_ru": "Vincitore Wellness Estate",
+    "title_zh": "Vincitore Wellness Estate",
+    "images": [
+      "https://via.placeholder.com/800x600?text=Vincitore+Wellness",
+      "https://via.placeholder.com/800x600?text=Wellness+Interior",
+      "https://via.placeholder.com/800x600?text=Pool+Area"
+    ],
+    "price": 220000,
+    "category": "Apartment",
+    "location": "Majan",
+    "dimensions": "Not specified",
+    "payment_plan": "50% Now, 40% on Handover, 10% Exclusive Benefit",
+    "holding_title": "Vincitore",
+    "status": "off-Plan",
+    "offer": true,
+    "amenities": ["wellness_amenities_65_plus", "strategic_location", "capital_appreciation", "rental_returns"],
+    "featured": false
+  },
+  {
+    "id": 2,
+    "title": "The Willows – Sobha Sanctuary (Type A 4BR)",
+    "title_ar": "ذا ويلووز – سوبها سانكتشواري (4 غرف)",
+    "title_fa": "دی ویلوز – سوبها سنکتوری (۴ خوابه)",
+    "title_tr": "The Willows – Sobha Sanctuary (4 Yatak Odası)",
+    "title_ru": "The Willows – Sobha Sanctuary (4 спальни)",
+    "title_zh": "柳树庄园 – Sobha Sanctuary (4卧)",
+    "images": [
+      "https://via.placeholder.com/800x600?text=Sobha+Willows+Exterior",
+      "https://via.placeholder.com/800x600?text=Interior",
+      "https://via.placeholder.com/800x600?text=Garden+View"
+    ],
+    "price": 1130000,
+    "category": "Villa",
+    "location": "Sobha Community",
+    "dimensions": "2521 sq.ft",
+    "payment_plan": "60/40",
+    "holding_title": "Sobha",
+    "status": "off-Plan",
+    "offer": false,
+    "amenities": ["prime_location", "family_layout", "privacy", "premium_construction"],
+    "featured": false
+  },
+  {
+    "id": 3,
+    "title": "Masterplan Salient Features (Al Yufrah)",
+    "title_ar": "مميزات المخطط الرئيسي (اليفرة)",
+    "title_fa": "ویژگی‌های اصلی مسترپلن (ال یفره)",
+    "title_tr": "Ana Plan Öne Çıkan Özellikler (Al Yufrah)",
+    "title_ru": "Основные особенности мастер-плана (Аль-Юфра)",
+    "title_zh": "总体规划主要特点 (Al Yufrah)",
+    "images": [
+      "https://via.placeholder.com/800x600?text=Al+Yufrah+Masterplan",
+      "https://via.placeholder.com/800x600?text=Wellness+Loop",
+      "https://via.placeholder.com/800x600?text=Community+View"
+    ],
+    "price": null,
+    "category": "Mixed",
+    "location": "Al Yufrah",
+    "dimensions": "348 hectare site",
+    "payment_plan": "Not specified",
+    "holding_title": "Not specified",
+    "status": "off-Plan",
+    "offer": false,
+    "amenities": ["wellness_loop_9km", "2200_villas", "18000_apartments", "50000_trees", "schools", "hospital", "mall"],
+    "featured": false
+  },
+  {
+    "id": 4,
+    "title": "2BR Sea-Facing Unit (Type E)",
+    "title_ar": "وحدة 2 غرفة نوم مطلة على البحر (نوع E)",
+    "title_fa": "واحد ۲ خوابه رو به دریا (نوع E)",
+    "title_tr": "2 Yatak Odalı Deniz Manzaralı Ünite (Tip E)",
+    "title_ru": "2-спальная квартира с видом на море (Тип E)",
+    "title_zh": "2卧海景单位 (E型)",
+    "images": [
+      "https://via.placeholder.com/800x600?text=Sea+View+Unit",
+      "https://via.placeholder.com/800x600?text=Interior",
+      "https://via.placeholder.com/800x600?text=Balcony"
+    ],
+    "price": 2427000,
+    "category": "Apartment",
+    "location": "Not specified",
+    "dimensions": "2408 sq.ft",
+    "payment_plan": "Not specified",
+    "holding_title": "Not specified",
+    "status": "off-Plan",
+    "offer": true,
+    "amenities": ["sea_facing", "2_bedroom"],
+    "featured": false
+  }
+]

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import properties from '/src/data/properties.js';
+import properties from '/src/data/properties.json';
 
 function PropertyGrid() {
   const { t, i18n } = useTranslation();
@@ -10,14 +10,11 @@ function PropertyGrid() {
   const [priceFilter, setPriceFilter] = useState('All Prices');
   const [bedroomsFilter, setBedroomsFilter] = useState('All Bedrooms');
   const [locationFilter, setLocationFilter] = useState('All Locations');
-  const [featuredFilter, setFeaturedFilter] = useState('All Properties');
+  const [offerFilter, setOfferFilter] = useState('All Properties');
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  // Ensure a valid language
-  const currentLanguage = i18n.language || 'en';
-
   const filteredProperties = properties.filter((property) => {
-    const title = property[`title_${currentLanguage}`] || property.title;
+    const title = property[`title_${i18n.language}`] || property.title;
     const matchesSearch = title
       .toLowerCase()
       .includes(searchQuery.toLowerCase());
@@ -27,10 +24,8 @@ function PropertyGrid() {
 
     const matchesPrice =
       priceFilter === 'All Prices' ||
-      (priceFilter === 'Under 3M AED' && property.price < 3000000) ||
-      (priceFilter === '3M - 6M AED' && property.price >= 3000000 && property.price <= 6000000) ||
-      (priceFilter === '6M - 10M AED' && property.price > 6000000 && property.price <= 10000000) ||
-      (priceFilter === 'Above 10M AED' && property.price > 10000000);
+      (priceFilter === 'Silver Deals (100k - 250k USD)' && property.price >= 100000 && property.price <= 250000) ||
+      (priceFilter === 'Golden Deals (250k+ USD)' && property.price > 250000);
 
     const matchesBedrooms =
       bedroomsFilter === 'All Bedrooms' || property.bedrooms.toString() === bedroomsFilter;
@@ -38,8 +33,9 @@ function PropertyGrid() {
     const matchesLocation =
       locationFilter === 'All Locations' || property.location === locationFilter;
 
-    const matchesFeatured =
-      featuredFilter === 'All Properties' || property.featured === true;
+    const matchesOffer =
+      offerFilter === 'All Properties' || property.offer === true;
+
 
     return (
       matchesSearch &&
@@ -47,7 +43,7 @@ function PropertyGrid() {
       matchesPrice &&
       matchesBedrooms &&
       matchesLocation &&
-      matchesFeatured
+      matchesOffer
     );
   });
 
@@ -66,8 +62,17 @@ function PropertyGrid() {
   };
 
   const categories = ['All Categories', ...new Set(properties.map(p => p.category))];
-  const bedroomOptions = ['All Bedrooms', ...new Set(properties.map(p => p.bedrooms.toString()))].sort();
+
   const locations = ['All Locations', ...new Set(properties.map(p => p.location))];
+
+  const getBorderStyle = (price) => {
+    if (price >= 100000 && price <= 250000) {
+      return 'silver-border';
+    } else if (price > 250000) {
+      return 'golden-border';
+    }
+    return ''; // default = no special border
+  };
 
   return (
     <main className="flex-1 p-4 sm:p-6">
@@ -105,26 +110,12 @@ function PropertyGrid() {
             className="w-full p-2 border rounded text-sm focus:outline-none focus:ring-2 focus:ring-[var(--gold)]"
           >
             <option value="All Prices">{t('all_prices')}</option>
-            <option value="Under 3M AED">{t('under_3m')}</option>
-            <option value="3M - 6M AED">{t('3m_6m')}</option>
-            <option value="6M - 10M AED">{t('6m_10m')}</option>
-            <option value="Above 10M AED">{t('above_10m')}</option>
+            <option value="Silver Deals (100k - 250k USD)">{t('silver_deals')}</option>
+            <option value="Golden Deals (250k+ USD)">{t('golden_deals')}</option>
           </select>
         </div>
 
-        <div className="flex-1 min-w-[200px]">
-          <select
-            value={bedroomsFilter}
-            onChange={(e) => setBedroomsFilter(e.target.value)}
-            className="w-full p-2 border rounded text-sm focus:outline-none focus:ring-2 focus:ring-[var(--gold)]"
-          >
-            {bedroomOptions.map((bedrooms) => (
-              <option key={bedrooms} value={bedrooms}>
-                {bedrooms === 'All Bedrooms' ? t('all_bedrooms') : bedrooms}
-              </option>
-            ))}
-          </select>
-        </div>
+    
 
         <div className="flex-1 min-w-[200px]">
           <select
@@ -142,112 +133,111 @@ function PropertyGrid() {
 
         <div className="flex-1 min-w-[200px]">
           <select
-            value={featuredFilter}
-            onChange={(e) => setFeaturedFilter(e.target.value)}
+            value={offerFilter}
+            onChange={(e) => setOfferFilter(e.target.value)}
             className="w-full p-2 border rounded text-sm focus:outline-none focus:ring-2 focus:ring-[var(--gold)]"
           >
             <option value="All Properties">{t('all_properties')}</option>
-            <option value="Featured Only">{t('featured_only')}</option>
+            <option value="Offers Only">{t('offers_only')}</option>
           </select>
         </div>
+
       </div>
 
       {filteredProperties.length === 0 ? (
         <p>{t('no_properties_found')}</p>
       ) : (
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {filteredProperties.map((property) => {
-            const title = property[`title_${currentLanguage}`] || property.title;
-            const price = Number(property.price).toLocaleString('en-US');
-            const whatsappMessage = (() => {
-              const messageTemplate = i18n.getResource(currentLanguage, 'translation', 'whatsapp_message') ||
-                "I'm interested in {title} priced at AED {price}";
-              // Optional: Log for debugging
-              console.log('Language:', currentLanguage, 'Message Template:', messageTemplate);
-              return messageTemplate.replace('{title}', title).replace('{price}', price);
-            })();
-            const translatedAmenities = property.amenities.map((amenity) => t(amenity)).join(', ');
-
-            return (
-              <div
-                key={property.id}
-                className="border rounded-lg shadow-sm cursor-pointer"
-                onClick={() => openModal(property)}
-              >
-                <img
-                  src={property.images[0]}
-                  alt={property.title}
-                  className="object-cover w-full h-48 rounded-t-lg"
-                />
-                <div className="p-4">
-                  <h2 className="mb-2 text-lg font-semibold">
-                    AED {property.price.toLocaleString()}
-                  </h2>
+          {filteredProperties.map((property) => (
+            <div
+              key={property.id}
+              className={`rounded-lg shadow-sm cursor-pointer ${getBorderStyle(property.price)} relative`}
+              onClick={() => openModal(property)}
+            >
+              {property.offer && (
+                <span className="absolute top-2 right-2 text-red-500 text-xl">💰</span> // Discount icon
+              )}
+              <img
+                src={property.images[0]}
+                alt={property.title}
+                className="object-cover w-full h-48 rounded-t-lg"
+              />
+              <div className="p-4">
+                <h2 className="mb-2 text-lg font-semibold">
+                  USD {property.price}
+                </h2>
+                <hr className="my-2 border-gray-300" /> {/* Separator line */}
+                <p className="text-sm">
+                  {t('category').split('{value}')[0]}{property.category}
+                </p>
+                <p className="text-sm">
+                  {t('location').split('{value}')[0]}{property.location}
+                </p>
+                <p className="text-sm">
+                  {t('dimensions').split('{value}')[0]}{property.dimensions}
+                </p>
+                <p className="text-sm">
+                  {property[`title_${i18n.language}`] || property.title}
+                </p>
+                <p className="text-sm">
+                  {t('amenities').split('{value}')[0]}{property.amenities.map((amenity) => t(amenity)).join(', ')}
+                </p>
+                <hr className="my-2 border-gray-300" /> {/* Separator line */}
+                <div> {/* Force LTR direction */}
                   <p className="text-sm">
-                    {t('category').split('{value}')[0]}{property.category}
-                  </p>
-                  <p className="text-sm">
-                    {t('location').split('{value}')[0]}{property.location}
-                  </p>
-                  <p className="text-sm">
-                    {t('dimensions').split('{value}')[0]}{property.dimensions}
-                  </p>
-                  <p className="text-sm">
-                    {t('bedrooms_label').split('{count}')[0]}{property.bedrooms}
-                  </p>
-                  <p className="text-sm">
-                    {t('bathrooms').split('{count}')[0]}{property.bathrooms}
+                    {t('payment_plan_label')} {property.payment_plan}
                   </p>
                   <p className="text-sm">
-                    {t('parking_spaces').split('{count}')[0]}{property.parking}
-                  </p>
-                  <p className="mt-2 text-sm">
-                    {property[`title_${currentLanguage}`] || property.title}
+                    {t('holding_title_label')} {property.holding_title}
                   </p>
                   <p className="text-sm">
-                    {t('amenities').split('{value}')[0]}{translatedAmenities}
+                    {t('status_label')} {property.status}
                   </p>
-                  <div className="flex gap-2 mt-4">
-                    <a
-                      href={`tel:+971123456789`}
-                      className="inline-block px-4 py-2 text-sm rounded"
-                    >
-                      {t('call')}
-                    </a>
-                    <a
-                      href={`https://wa.me/+971123456789?text=${encodeURIComponent(whatsappMessage)}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-block px-4 py-2 text-sm rounded"
-                    >
-                      {t('whatsapp')}
-                    </a>
-                  </div>
-
-                  <script type="application/ld+json">
-                    {JSON.stringify({
-                      '@context': 'https://schema.org',
-                      '@type': 'Residence',
-                      name: property[`title_${currentLanguage}`] || property.title,
-                      address: {
-                        '@type': 'PostalAddress',
-                        addressLocality: property.location,
-                        addressCountry: 'AE',
-                      },
-                      floorSize: {
-                        '@type': 'QuantitativeValue',
-                        value: property.dimensions,
-                        unitCode: 'FTK',
-                      },
-                      numberOfBedrooms: property.bedrooms,
-                      numberOfBathroomsTotal: property.bathrooms,
-                      numberOfAvailableParkingSpaces: property.parking,
-                    })}
-                  </script>
                 </div>
+                <div className="flex gap-2 mt-4">
+                  <a
+                    href={`tel:+971123456789`}
+                    className="inline-block px-4 py-2 text-sm rounded"
+                  >
+                    {t('call')}
+                  </a>
+                  <a
+                    href={`https://wa.me/+971123456789?text=${encodeURIComponent(
+                      i18n.getResource(i18n.language, 'translation', 'whatsapp_message')
+                        .replace('{title}', property[`title_${i18n.language}`] || property.title)
+                        .replace('{price}', property.price)
+                    )}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block px-4 py-2 text-sm rounded"
+                  >
+                    {t('whatsapp')}
+                  </a>
+                </div>
+
+                <script type="application/ld+json">
+                  {JSON.stringify({
+                    '@context': 'https://schema.org',
+                    '@type': 'Residence',
+                    name: property[`title_${i18n.language}`] || property.title,
+                    address: {
+                      '@type': 'PostalAddress',
+                      addressLocality: property.location,
+                      addressCountry: 'AE',
+                    },
+                    floorSize: {
+                      '@type': 'QuantitativeValue',
+                      value: property.dimensions,
+                      unitCode: 'FTK',
+                    },
+                    numberOfBedrooms: property.bedrooms,
+                    numberOfBathroomsTotal: property.bathrooms,
+                    numberOfAvailableParkingSpaces: property.parking,
+                  })}
+                </script>
               </div>
-            );
-          })}
+            </div>
+          ))}
         </div>
       )}
 
@@ -284,8 +274,9 @@ function PropertyGrid() {
                   ))}
                 </div>
                 <h2 className="mt-4 text-xl font-semibold">
-                  AED {selectedProperty.price.toLocaleString()}
+                  USD {selectedProperty.price.toLocaleString()}
                 </h2>
+                <hr className="my-2 border-gray-300" /> {/* Separator line */}
                 <p className="text-sm">
                   {t('category').split('{value}')[0]}{selectedProperty.category}
                 </p>
@@ -296,21 +287,23 @@ function PropertyGrid() {
                   {t('dimensions').split('{value}')[0]}{selectedProperty.dimensions}
                 </p>
                 <p className="text-sm">
-                  {t('bedrooms_label').split('{count}')[0]}{selectedProperty.bedrooms}
+                  {selectedProperty[`title_${i18n.language}`] || selectedProperty.title}
                 </p>
                 <p className="text-sm">
-                  {t('bathrooms').split('{count}')[0]}{selectedProperty.bathrooms}
+                  {t('amenities').split('{value}')[0]}{selectedProperty.amenities.map((amenity) => t(amenity)).join(', ')}
                 </p>
-                <p className="text-sm">
-                  {t('parking_spaces').split('{count}')[0]}{selectedProperty.parking}
-                </p>
-                <p className="mt-2 text-sm">
-                  {selectedProperty[`title_${currentLanguage}`] || selectedProperty.title}
-                </p>
-                <p className="text-sm">
-                  {t('amenities').split('{value}')[0]}
-                  {selectedProperty.amenities.map((amenity) => t(amenity)).join(', ')}
-                </p>
+                <hr className="my-2 border-gray-300" /> {/* Separator line */}
+                <div> {/* Force LTR direction */}
+                  <p className="text-sm">
+                    {t('payment_plan_label')} {selectedProperty.payment_plan}
+                  </p>
+                  <p className="text-sm">
+                    {t('holding_title_label')} {selectedProperty.holding_title}
+                  </p>
+                  <p className="text-sm">
+                    {t('status_label')} {selectedProperty.status}
+                  </p>
+                </div>
                 <div className="flex gap-2 mt-4">
                   <a
                     href={`tel:+971123456789`}
@@ -320,15 +313,9 @@ function PropertyGrid() {
                   </a>
                   <a
                     href={`https://wa.me/+971123456789?text=${encodeURIComponent(
-                      (() => {
-                        const messageTemplate = i18n.getResource(currentLanguage, 'translation', 'whatsapp_message') ||
-                          "I'm interested in {title} priced at AED {price}";
-                        // Optional: Log for debugging
-                        console.log('Modal Language:', currentLanguage, 'Message Template:', messageTemplate);
-                        return messageTemplate
-                          .replace('{title}', selectedProperty[`title_${currentLanguage}`] || selectedProperty.title)
-                          .replace('{price}', Number(selectedProperty.price).toLocaleString('en-US'));
-                      })()
+                      i18n.getResource(i18n.language, 'translation', 'whatsapp_message')
+                        .replace('{title}', selectedProperty[`title_${i18n.language}`] || selectedProperty.title)
+                        .replace('{price}', selectedProperty.price.toLocaleString())
                     )}`}
                     target="_blank"
                     rel="noopener noreferrer"
