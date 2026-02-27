@@ -180,18 +180,19 @@ function PropertyGrid() {
                   {property[`title_${i18n.language}`] || property.title}
                 </p>
                 <p className="text-sm">
-                  {t('amenities').split('{value}')[0]}{property.amenities.map((amenity) => t(amenity)).join(', ')}
+                  {t('amenities').split('{value}')[0]}
+                  {property[`amenities_${i18n.language}`] + "," || property.amenities_en}
                 </p>
                 <hr className="my-2 border-gray-300" /> {/* Separator line */}
-                <div> {/* Force LTR direction */}
+                <div>
                   <p className="text-sm">
-                    {t('payment_plan_label')} {property.payment_plan}
+                    {t('payment_plan_label')} {property[`payment_plan_${i18n.language}`] || property.payment_plan_en}
                   </p>
                   <p className="text-sm">
-                    {t('holding_title_label')} {property.holding_title}
+                    {t('holding_title_label')} {property[`holding_title_${i18n.language}`] || property.holding_title_en}
                   </p>
                   <p className="text-sm">
-                    {t('status_label')} {property.status}
+                    {t('status_label')} {property[`status_${i18n.language}`] || property.status_en}
                   </p>
                 </div>
                 <div className="flex gap-2 mt-4">
@@ -290,18 +291,19 @@ function PropertyGrid() {
                   {selectedProperty[`title_${i18n.language}`] || selectedProperty.title}
                 </p>
                 <p className="text-sm">
-                  {t('amenities').split('{value}')[0]}{selectedProperty.amenities.map((amenity) => t(amenity)).join(', ')}
+                  {t('amenities').split('{value}')[0]}
+                  {selectedProperty[`amenities_${i18n.language}`] + "," || selectedProperty.amenities_en}
                 </p>
                 <hr className="my-2 border-gray-300" /> {/* Separator line */}
-                <div> {/* Force LTR direction */}
+                <div>
                   <p className="text-sm">
-                    {t('payment_plan_label')} {selectedProperty.payment_plan}
+                    {t('payment_plan_label')} {selectedProperty[`payment_plan_${i18n.language}`] || selectedProperty.payment_plan_en}
                   </p>
                   <p className="text-sm">
-                    {t('holding_title_label')} {selectedProperty.holding_title}
+                    {t('holding_title_label')} {selectedProperty[`holding_title_${i18n.language}`] || selectedProperty.holding_title_en}
                   </p>
                   <p className="text-sm">
-                    {t('status_label')} {selectedProperty.status}
+                    {t('status_label')} {selectedProperty[`status_${i18n.language}`] || selectedProperty.status_en}
                   </p>
                 </div>
                 <div className="flex gap-2 mt-4">

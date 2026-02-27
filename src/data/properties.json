@@ -8,21 +8,64 @@
     "title_ru": "Vincitore Wellness Estate",
     "title_zh": "Vincitore Wellness Estate",
     "images": [
-      "./assets/images/Riviera66.jpeg",
-      "./assets/images/Riviera66(1).jpeg",
-      "./assets/images/Riviera66(2).jpeg",
-      "./assets/images/Riviera66(3).jpeg"
+      "./assets/images/1-1.jpeg",
+      "./assets/images/1-2.jpeg",
+      "./assets/images/1-3.jpeg"
     ],
     "price": 220000,
     "category": "Apartment",
     "location": "Majan",
     "dimensions": "Not specified",
-    "payment_plan": "50% Now, 40% on Handover, 10% Exclusive Benefit",
-    "holding_title": "Azizi",
-    "status": "off-Plan",
     "offer": true,
-    "amenities": ["wellness_amenities_65_plus", "strategic_location", "capital_appreciation", "rental_returns"],
-    "featured": false
+    "featured": false,
+    "amenities_en": [
+      "65+ world-class wellness amenities",
+      "Strategic location (Majan) for lifestyle & investment",
+      "Record-breaking Capital Appreciation & Rental Returns"
+    ],
+    "amenities_ar": [
+      "أكثر من 65 مرفقًا صحيًا عالمي المستوى",
+      "موقع استراتيجي (مجان) لأسلوب الحياة والاستثمار",
+      "ارتفاع رأس المال و عوائد الإيجار القياسية"
+    ],
+    "amenities_fa": [
+      "بیش از 65 امکانات رفاهی درجه یک جهانی",
+      "موقعیت استراتژیک (مجان) برای سبک زندگی و سرمایه گذاری",
+      "افزایش سرمایه و بازده اجاره رکوردشکن"
+    ],
+    "amenities_tr": [
+      "65+ dünya sınıfı wellness olanakları",
+      "Yaşam tarzı ve yatırım için stratejik konum (Majan)",
+      "Rekor kıran sermaye artışı ve kira getirileri"
+    ],
+    "amenities_ru": [
+      "65+ первоклассных wellness-удобств",
+      "Стратегическое расположение (Majan) для образа жизни и инвестиций",
+      "Рекордный рост капитала и доходы от аренды"
+    ],
+    "amenities_zh": [
+      "65+ 世界级健康设施",
+      "战略位置（Majan）用于生活方式和投资",
+      "创纪录的资本增值和租金回报"
+    ],
+    "payment_plan_en": "50% Now, 40% on Handover, 10% Exclusive Benefit",
+    "payment_plan_ar": "50% الآن، 40% عند التسليم، 10% ميزة حصرية",
+    "payment_plan_fa": "50% حالا، 40% در تحویل، 10% مزیت انحصاری",
+    "payment_plan_tr": "50% Şimdi, 40% Teslimde, 10% Özel Fayda",
+    "payment_plan_ru": "50% сейчас, 40% при сдаче, 10% эксклюзивная выгода",
+    "payment_plan_zh": "50% 现在, 40% 交接时, 10% 专属福利",
+    "holding_title_en": "Vincitore",
+    "holding_title_ar": "فينشيتور",
+    "holding_title_fa": "وینچیتوره",
+    "holding_title_tr": "Vincitore",
+    "holding_title_ru": "Vincitore",
+    "holding_title_zh": "Vincitore",
+    "status_en": "off-Plan",
+    "status_ar": "تحت الإنشاء",
+    "status_fa": "در حال ساخت",
+    "status_tr": "Plan Dışı",
+    "status_ru": "off-Plan",
+    "status_zh": "规划外"
   },
   {
     "id": 2,
@@ -33,67 +76,389 @@
     "title_ru": "The Willows – Sobha Sanctuary (4 спальни)",
     "title_zh": "柳树庄园 – Sobha Sanctuary (4卧)",
     "images": [
-      "https://via.placeholder.com/800x600?text=Sobha+Willows+Exterior",
-      "https://via.placeholder.com/800x600?text=Interior",
-      "https://via.placeholder.com/800x600?text=Garden+View"
+      "./assets/images/2-1.JPG",
+      "./assets/images/2-2.JPG",
+      "./assets/images/2-3.JPG"
     ],
     "price": 1130000,
     "category": "Villa",
     "location": "Sobha Community",
     "dimensions": "2521 sq.ft",
-    "payment_plan": "60/40",
-    "holding_title": "Sobha",
-    "status": "off-Plan",
     "offer": false,
-    "amenities": ["prime_location", "family_layout", "privacy", "premium_construction"],
-    "featured": false
+    "featured": false,
+    "amenities_en": [
+      "Prime Location Inside the Community",
+      "Spacious family layout",
+      "Strong privacy within a gated villa community",
+      "Premium construction quality"
+    ],
+    "amenities_ar": [
+      "موقع مميز داخل المجتمع",
+      "تصميم عائلي واسع",
+      "خصوصية قوية داخل مجتمع مسور",
+      "جودة بناء فاخرة"
+    ],
+    "amenities_fa": [
+      "موقعیت برتر داخل جامعه",
+      "چیدمان خانوادگی جادار",
+      "حریم خصوصی قوی در جامعه محصور",
+      "کیفیت ساخت برتر"
+    ],
+    "amenities_tr": [
+      "Topluluk İçinde Prime Konum",
+      "Geniş aile düzeni",
+      "Kapalı villa topluluğunda güçlü gizlilik",
+      "Premium inşaat kalitesi"
+    ],
+    "amenities_ru": [
+      "Прайм-локация внутри сообщества",
+      "Просторная семейная планировка",
+      "Высокая приватность в закрытом вилловом сообществе",
+      "Премиальное качество строительства"
+    ],
+    "amenities_zh": [
+      "社区内优越位置",
+      "宽敞的家庭布局",
+      "封闭式别墅社区内高度私密",
+      "高端建筑质量"
+    ],
+    "payment_plan_en": "60% During Construction, 40% on Handover",
+    "payment_plan_ar": "60% أثناء الإنشاء، 40% عند التسليم",
+    "payment_plan_fa": "60% در طول ساخت، 40% در تحویل",
+    "payment_plan_tr": "İnşaat Sırasında %60, Teslimde %40",
+    "payment_plan_ru": "60% во время строительства, 40% при сдаче",
+    "payment_plan_zh": "建设期间60%，交接时40%",
+    "holding_title_en": "Sobha",
+    "holding_title_ar": "سوبها",
+    "holding_title_fa": "سوبها",
+    "holding_title_tr": "Sobha",
+    "holding_title_ru": "Sobha",
+    "holding_title_zh": "Sobha",
+    "status_en": "off-Plan",
+    "status_ar": "تحت الإنشاء",
+    "status_fa": "در حال ساخت",
+    "status_tr": "Plan Dışı",
+    "status_ru": "off-Plan",
+    "status_zh": "规划外"
   },
   {
     "id": 3,
-    "title": "Masterplan Salient Features (Al Yufrah)",
-    "title_ar": "مميزات المخطط الرئيسي (اليفرة)",
-    "title_fa": "ویژگی‌های اصلی مسترپلن (ال یفره)",
-    "title_tr": "Ana Plan Öne Çıkan Özellikler (Al Yufrah)",
-    "title_ru": "Основные особенности мастер-плана (Аль-Юфра)",
-    "title_zh": "总体规划主要特点 (Al Yufrah)",
+    "title": "Sobha SeaHaven Tower B - 2BR + Powder Room + Yard",
+    "title_ar": "سوبها سي هيفن تاور بي - غرفتي نوم + غرفة بودرة + فناء",
+    "title_fa": "سوبها سی هون تاور بی - ۲ خوابه + پودر روم + حیاط",
+    "title_tr": "Sobha SeaHaven Tower B - 2BR + Pudra Odası + Avlu",
+    "title_ru": "Sobha SeaHaven Tower B - 2-спальная + Пудровая + Дворик",
+    "title_zh": "Sobha SeaHaven Tower B - 2卧 + 化妆间 + 庭院",
     "images": [
-      "https://via.placeholder.com/800x600?text=Al+Yufrah+Masterplan",
-      "https://via.placeholder.com/800x600?text=Wellness+Loop",
-      "https://via.placeholder.com/800x600?text=Community+View"
+      "./assets/images/3-1.JPG",
+      "./assets/images/3-2.JPG",
+      "./assets/images/3-3.JPG"
     ],
-    "price": null,
-    "category": "Mixed",
-    "location": "Al Yufrah",
-    "dimensions": "348 hectare site",
-    "payment_plan": "Not specified",
-    "holding_title": "Sobha",
-    "status": "off-Plan",
-    "offer": false,
-    "amenities": ["wellness_loop_9km", "2200_villas", "18000_apartments", "50000_trees", "schools", "hospital", "mall"],
-    "featured": false
+    "price": 2424000,
+    "category": "Apartment",
+    "location": "Dubai Harbour",
+    "dimensions": "2408 sq.ft (Suite 1751 sq.ft + Yard 657 sq.ft)",
+    "offer": true,
+    "featured": false,
+    "amenities_en": [
+      "Breathtaking sea, Palm Jumeirah & Ain Dubai views",
+      "Yacht-inspired architecture with premium finishes",
+      "Expansive private yard & powder room in 2BR layout",
+      "Luxury waterfront amenities including infinity pool & sky bridge",
+      "World-class fitness, yoga zones & family facilities"
+    ],
+    "amenities_ar": [
+      "إطلالات خلابة على البحر ونخلة جميرا وعين دبي",
+      "هندسة مستوحاة من اليخوت مع تشطيبات فاخرة",
+      "فناء خاص واسع وغرفة بودرة في تصميم غرفتي نوم",
+      "مرافق واجهة بحرية فاخرة تشمل مسبح إنفينيتي وجسر سماء",
+      "مرافق لياقة عالمية المستوى ومناطق يوغا وعائلية"
+    ],
+    "amenities_fa": [
+      "مناظر خیره‌کننده دریا، پالم جمیرا و عین دبی",
+      "معماری الهام‌گرفته از یات با پرداخت‌های لوکس",
+      "حیاط خصوصی وسیع و پودر روم در پلان ۲ خوابه",
+      "امکانات لوکس ساحلی شامل استخر بی‌نهایت و پل آسمانی",
+      "امکانات تناسب اندام جهانی، زون یوگا و خانوادگی"
+    ],
+    "amenities_tr": [
+      "Muhteşem deniz, Palm Jumeirah ve Ain Dubai manzaraları",
+      "Yat esintili mimari ve premium kaplamalar",
+      "Geniş özel avlu ve pudra odası içeren 2BR düzen",
+      "Sonsuzluk havuzu ve gökyüzü köprüsü dahil lüks sahil olanakları",
+      "Dünya standartlarında fitness, yoga alanları ve aile tesisleri"
+    ],
+    "amenities_ru": [
+      "Потрясающие виды на море, Palm Jumeirah и Ain Dubai",
+      "Архитектура в стиле яхт с премиум-отделкой",
+      "Просторный частный дворик и пудровая в планировке 2 спален",
+      "Роскошные удобства на набережной: бесконечный бассейн и небесный мост",
+      "Фитнес мирового уровня, зоны йоги и семейные объекты"
+    ],
+    "amenities_zh": [
+      "壮丽的海景、棕榈岛和阿因迪拜景观",
+      "游艇灵感建筑和高档饰面",
+      "宽敞私人庭院及化妆间，2卧布局",
+      "奢华水岸设施，包括无边泳池和天空连桥",
+      "世界级健身、瑜伽区及家庭设施"
+    ],
+    "payment_plan_en": "20% on Booking, 10% at 5/10/13/15 months, 40% on Completion",
+    "payment_plan_ar": "20% عند الحجز، 10% بعد 5/10/13/15 شهرًا، 40% عند الإكمال",
+    "payment_plan_fa": "20% هنگام رزرو، 10% در 5/10/13/15 ماه، 40% در تکمیل",
+    "payment_plan_tr": "Rezervasyonda %20, 5/10/13/15 ayda %10, Tamamlanmada %40",
+    "payment_plan_ru": "20% при бронировании, 10% через 5/10/13/15 месяцев, 40% при завершении",
+    "payment_plan_zh": "预订时20%，5/10/13/15个月后10%，完成时40%",
+    "holding_title_en": "Sobha",
+    "holding_title_ar": "سوبها",
+    "holding_title_fa": "سوبها",
+    "holding_title_tr": "Sobha",
+    "holding_title_ru": "Sobha",
+    "holding_title_zh": "Sobha",
+    "status_en": "off-Plan",
+    "status_ar": "تحت الإنشاء",
+    "status_fa": "در حال ساخت",
+    "status_tr": "Plan Dışı",
+    "status_ru": "off-Plan",
+    "status_zh": "规划外"
   },
   {
     "id": 4,
-    "title": "2BR Sea-Facing Unit (Type E)",
-    "title_ar": "وحدة 2 غرفة نوم مطلة على البحر (نوع E)",
-    "title_fa": "واحد ۲ خوابه رو به دریا (نوع E)",
-    "title_tr": "2 Yatak Odalı Deniz Manzaralı Ünite (Tip E)",
-    "title_ru": "2-спальная квартира с видом на море (Тип E)",
-    "title_zh": "2卧海景单位 (E型)",
+    "title": "DAMAC Islands Phase 2 - 4BR Corner Townhouse",
+    "title_ar": "داماك آيلاندز المرحلة 2 - تاون هاوس زاوية 4 غرف نوم",
+    "title_fa": "داماک آیلندز فاز 2 - تاون‌هاوس گوشه‌ای ۴ خوابه",
+    "title_tr": "DAMAC Islands Phase 2 - 4BR Köşe Townhouse",
+    "title_ru": "DAMAC Islands Phase 2 - 4-спальная угловая таунхаус",
+    "title_zh": "达马克群岛2期 - 4卧角落地墅",
     "images": [
-      "https://via.placeholder.com/800x600?text=Sea+View+Unit",
-      "https://via.placeholder.com/800x600?text=Interior",
-      "https://via.placeholder.com/800x600?text=Balcony"
+      "./assets/images/4-1.jpeg",
+      "./assets/images/4-2.jpeg",
+      "./assets/images/4-3.jpeg"
     ],
-    "price": 2427000,
-    "category": "Apartment",
-    "location": "Not specified",
-    "dimensions": "2408 sq.ft",
-    "payment_plan": "Not specified",
-    "holding_title": "Sobha",
-    "status": "off-Plan",
+    "price": 762000,
+    "category": "Townhouse",
+    "location": "Dubailand",
+    "dimensions": "Not specified",
     "offer": true,
-    "amenities": ["sea_facing", "2_bedroom"],
-    "featured": false
+    "featured": false,
+    "amenities_en": [
+      "Waterfront living with lagoon views",
+      "Premium 4BR corner townhouse design",
+      "Tropical island-inspired community",
+      "Beach access & resort-style amenities",
+      "High investment potential in Dubailand"
+    ],
+    "amenities_ar": [
+      "معيشة على الواجهة المائية مع إطلالات على اللاجون",
+      "تصميم تاون هاوس زاوية فاخر 4 غرف نوم",
+      "مجتمع مستوحى من الجزر الاستوائية",
+      "وصول إلى الشاطئ ومرافق منتجعية",
+      "إمكانية استثمار عالية في دبي لاند"
+    ],
+    "amenities_fa": [
+      "زندگی کنار آب با منظره لاگون",
+      "طراحی تاون‌هاوس گوشه‌ای لوکس ۴ خوابه",
+      "جامعه الهام‌گرفته از جزایر گرمسیری",
+      "دسترسی به ساحل و امکانات رفاهی رزورتی",
+      "پتانسیل سرمایه‌گذاری بالا در دوبی‌لند"
+    ],
+    "amenities_tr": [
+      "Lagün manzaralı su kenarı yaşam",
+      "Premium 4BR köşe townhouse tasarımı",
+      "Tropikal ada esintili topluluk",
+      "Plaj erişimi ve resort tarzı olanaklar",
+      "Dubailand'de yüksek yatırım potansiyeli"
+    ],
+    "amenities_ru": [
+      "Жизнь на набережной с видом на лагуну",
+      "Премиум 4-комнатный угловой таунхаус",
+      "Тропическое островное сообщество",
+      "Доступ к пляжу и курортные удобства",
+      "Высокий инвестиционный потенциал в Дубайленде"
+    ],
+    "amenities_zh": [
+      "泻湖景观的水岸生活",
+      "高端4卧角落地墅设计",
+      "热带岛屿主题社区",
+      "海滩通道及度假村式设施",
+      "迪拜兰高投资潜力"
+    ],
+    "payment_plan_en": "EOI from AED 165,000 – Flexible installment plan available",
+    "payment_plan_ar": "EOI من AED 165,000 – خطة تقسيط مرنة متاحة",
+    "payment_plan_fa": "EOI از AED 165,000 – برنامه اقساطی انعطاف‌پذیر موجود",
+    "payment_plan_tr": "EOI AED 165,000'dan başlıyor – Esnek taksit planı mevcut",
+    "payment_plan_ru": "EOI от AED 165 000 – Доступен гибкий план рассрочки",
+    "payment_plan_zh": "EOI 从 AED 165,000 开始 – 灵活分期付款计划可用",
+    "holding_title_en": "Damac",
+    "holding_title_ar": "داماك",
+    "holding_title_fa": "داماک",
+    "holding_title_tr": "Damac",
+    "holding_title_ru": "Damac",
+    "holding_title_zh": "达马克",
+    "status_en": "off-Plan",
+    "status_ar": "تحت الإنشاء",
+    "status_fa": "در حال ساخت",
+    "status_tr": "Plan Dışı",
+    "status_ru": "off-Plan",
+    "status_zh": "规划外"
+  },
+  {
+    "id": 5,
+    "title": "DAMAC Islands Phase 2 - 5BR Corner Townhouse",
+    "title_ar": "داماك آيلاندز المرحلة 2 - تاون هاوس زاوية 5 غرف نوم",
+    "title_fa": "داماک آیلندز فاز 2 - تاون‌هاوس گوشه‌ای ۵ خوابه",
+    "title_tr": "DAMAC Islands Phase 2 - 5BR Köşe Townhouse",
+    "title_ru": "DAMAC Islands Phase 2 - 5-спальная угловая таунхаус",
+    "title_zh": "达马克群岛2期 - 5卧角落地墅",
+    "images": [
+      "./assets/images/5-1.jpeg",
+      "./assets/images/5-2.jpeg",
+      "./assets/images/5-3.jpeg"
+    ],
+    "price": 1035000,
+    "category": "Townhouse",
+    "location": "Dubailand",
+    "dimensions": "Not specified",
+    "offer": true,
+    "featured": false,
+    "amenities_en": [
+      "Spacious 5BR corner townhouse with lagoon views",
+      "Exclusive waterfront community",
+      "Tropical-inspired landscaping & facilities",
+      "Modern architecture & premium finishes",
+      "Strong rental & capital growth potential"
+    ],
+    "amenities_ar": [
+      "تاون هاوس زاوية فسيح 5 غرف نوم مع إطلالات على اللاجون",
+      "مجتمع حصري على الواجهة المائية",
+      "تنسيق حدائق استوائي ومرافق",
+      "هندسة معمارية حديثة وتشطيبات فاخرة",
+      "إمكانية نمو إيجاري ورأس مال قوي"
+    ],
+    "amenities_fa": [
+      "تاون‌هاوس گوشه‌ای جادار ۵ خوابه با منظره لاگون",
+      "جامعه انحصاری کنار آب",
+      "منظره‌سازی گرمسیری و امکانات",
+      "معماری مدرن و پرداخت‌های لوکس",
+      "پتانسیل رشد اجاره و سرمایه قوی"
+    ],
+    "amenities_tr": [
+      "Lagün manzaralı geniş 5BR köşe townhouse",
+      "Özel su kenarı topluluğu",
+      "Tropikal peyzaj ve tesisler",
+      "Modern mimari ve premium kaplamalar",
+      "Güçlü kira ve sermaye büyüme potansiyeli"
+    ],
+    "amenities_ru": [
+      "Просторный 5-комнатный угловой таунхаус с видом на лагуну",
+      "Эксклюзивное сообщество на набережной",
+      "Тропический ландшафт и удобства",
+      "Современная архитектура и премиум-отделка",
+      "Сильный потенциал аренды и прироста капитала"
+    ],
+    "amenities_zh": [
+      "宽敞5卧角落地墅，享有泻湖景观",
+      "专属水岸社区",
+      "热带景观及设施",
+      "现代建筑和高档饰面",
+      "强劲的租金及资本增长潜力"
+    ],
+    "payment_plan_en": "EOI from AED 160,000 – Flexible installment plan available",
+    "payment_plan_ar": "EOI من AED 160,000 – خطة تقسيط مرنة متاحة",
+    "payment_plan_fa": "EOI از AED 160,000 – برنامه اقساطی انعطاف‌پذیر موجود",
+    "payment_plan_tr": "EOI AED 160,000'dan başlıyor – Esnek taksit planı mevcut",
+    "payment_plan_ru": "EOI от AED 160 000 – Доступен гибкий план рассрочки",
+    "payment_plan_zh": "EOI 从 AED 160,000 开始 – 灵活分期付款计划可用",
+    "holding_title_en": "Damac",
+    "holding_title_ar": "داماك",
+    "holding_title_fa": "داماک",
+    "holding_title_tr": "Damac",
+    "holding_title_ru": "Damac",
+    "holding_title_zh": "达马克",
+    "status_en": "off-Plan",
+    "status_ar": "تحت الإنشاء",
+    "status_fa": "در حال ساخت",
+    "status_tr": "Plan Dışı",
+    "status_ru": "off-Plan",
+    "status_zh": "规划外"
+  },
+  {
+    "id": 6,
+    "title": "DAMAC Islands Phase 2 - 5BR Twin Villa",
+    "title_ar": "داماك آيلاندز المرحلة 2 - فيلا توأم 5 غرف نوم",
+    "title_fa": "داماک آیلندز فاز 2 - ویلای دوقلو ۵ خوابه",
+    "title_tr": "DAMAC Islands Phase 2 - 5BR İkiz Villa",
+    "title_ru": "DAMAC Islands Phase 2 - 5-спальная вилла-близнец",
+    "title_zh": "达马克群岛2期 - 5卧双联别墅",
+    "images": [
+      "./assets/images/6-1.jpeg",
+      "./assets/images/6-2.jpeg",
+      "./assets/images/6-3.jpeg"
+    ],
+    "price": 1307000,
+    "category": "Villa",
+    "location": "Dubailand",
+    "dimensions": "Not specified",
+    "offer": true,
+    "featured": false,
+    "amenities_en": [
+      "Luxury 5BR twin villa with waterfront access",
+      "Private outdoor space & lagoon views",
+      "Island-themed resort community",
+      "High-end finishes and modern design",
+      "Excellent for family living & investment"
+    ],
+    "amenities_ar": [
+      "فيلا توأم فاخرة 5 غرف نوم مع وصول إلى الواجهة المائية",
+      "مساحة خارجية خاصة وإطلالات على اللاجون",
+      "مجتمع منتجعي مستوحى من الجزر",
+      "تشطيبات عالية الجودة وتصميم حديث",
+      "ممتاز للعيش العائلي والاستثمار"
+    ],
+    "amenities_fa": [
+      "ویلای دوقلو لوکس ۵ خوابه با دسترسی به آب",
+      "فضای بیرونی خصوصی و منظره لاگون",
+      "جامعه رزورتی با تم جزیره‌ای",
+      "پرداخت‌ها و طراحی مدرن",
+      "عالی برای زندگی خانوادگی و سرمایه‌گذاری"
+    ],
+    "amenities_tr": [
+      "Su kenarı erişimli lüks 5BR ikiz villa",
+      "Özel dış mekan ve lagün manzarası",
+      "Ada temalı resort topluluğu",
+      "Üst düzey kaplamalar ve modern tasarım",
+      "Aile yaşamı ve yatırım için mükemmel"
+    ],
+    "amenities_ru": [
+      "Роскошная 5-комнатная вилла-близнец с доступом к воде",
+      "Частное открытое пространство и вид на лагуну",
+      "Островной курортный комплекс",
+      "Высококачественная отделка и современный дизайн",
+      "Отлично для семейной жизни и инвестиций"
+    ],
+    "amenities_zh": [
+      "豪华5卧双联别墅，水岸通道",
+      "私人户外空间及泻湖景观",
+      "岛屿主题度假社区",
+      "高端饰面和现代设计",
+      "极佳的家庭居住及投资选择"
+    ],
+    "payment_plan_en": "EOI from AED 225,000 – Flexible installment plan available",
+    "payment_plan_ar": "EOI من AED 225,000 – خطة تقسيط مرنة متاحة",
+    "payment_plan_fa": "EOI از AED 225,000 – برنامه اقساطی انعطاف‌پذیر موجود",
+    "payment_plan_tr": "EOI AED 225,000'dan başlıyor – Esnek taksit planı mevcut",
+    "payment_plan_ru": "EOI от AED 225 000 – Доступен гибкий план рассрочки",
+    "payment_plan_zh": "EOI 从 AED 225,000 开始 – 灵活分期付款计划可用",
+    "holding_title_en": "Damac",
+    "holding_title_ar": "داماك",
+    "holding_title_fa": "داماک",
+    "holding_title_tr": "Damac",
+    "holding_title_ru": "Damac",
+    "holding_title_zh": "达马克",
+    "status_en": "off-Plan",
+    "status_ar": "تحت الإنشاء",
+    "status_fa": "در حال ساخت",
+    "status_tr": "Plan Dışı",
+    "status_ru": "off-Plan",
+    "status_zh": "规划外"
   }
 ]
