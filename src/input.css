@@ -140,7 +140,8 @@ main div.border:hover {
 }
 
 main img {
-  min-height: 12rem;
+  /* min-height: 12rem; */
+  height: fit-content;
 }
 
 main div a {
